@@ -141,7 +141,7 @@ int comp(Individual a, Individual b) {
     return a.prs > b.prs;
 }
 
-int main () {  
+int main (int argc, char *argv[]) {  
     string prs_files[num_files] = {"resources/PGS000011.txt", "resources/PGS000010.txt"};
     vector<Line> locs;
 
@@ -166,12 +166,12 @@ int main () {
             myfile.close();
         }
     }
-    cout << endl << "Number of individuals to rank: ";
 
-    string n_s;
-    cin >> n_s;
+    string n_s = argv[1];
     int n = stoi(n_s);
     vector<Individual> group;
+
+    cout << endl << "Number of individuals to rank: " << n_s << endl << endl;
 
     cout << "----Creating " << n << " random individuals----" << endl << endl;
     for(int i = 0; i < n; i++){
