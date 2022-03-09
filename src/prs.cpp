@@ -92,8 +92,8 @@ Line process_line(string a, map<string, int> ref) {
     int or_i = ref.find("OR") != ref.end() ? ref.find("OR")->second : -1;
 
     l.rsid = rsid_i != -1 ? split[rsid_i] : "unknown";
-    l.effect = ef_i != -1 ? split[ef_i].at(0) : 'K';
-    l.other = ot_i != -1 ? split[ot_i].at(0) : 'K';
+    l.effect = ef_i != -1 ? split[ef_i].at(0) : 'E';
+    l.other = ot_i != -1 ? split[ot_i].at(0) : 'O';
     l.weight = ew_i != -1 ? stod(split[ew_i]) : 0;
     l.frequency = af_i != -1 ? stod(split[af_i]) : 0.5;
     l.locus = ln_i != -1 ? split[ln_i] : "unknown";
